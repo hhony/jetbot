@@ -1,0 +1,26 @@
+#!/bin/sh
+# params
+timeout=3000
+# proc id
+pids=`pgrep -u $USER gnome-panel`
+for pid in $pids; do
+    # find DBUS session bus for this session
+    DBUS_SESSION_BUS_ADDRESS=`grep -z DBUS_SESSION_BUS_ADDRESS \
+      /proc/$pid/environ | sed -e 's/DBUS_SESSION_BUS_ADDRESS=//'`
+    # use pid
+    DBUS_SESSION_BUS_ADDRESS=$DBUS_SESSION_BUS_ADDRESS \
+      notify-send -u low -t $timeout "usb dev: " "found: $1"
+done
+
+## FIXME: how is this triggered for KDE?
+#pids=$(pgrep 'gnome-panel|xfce4-panel')
+## logger "$0 [$$]: pids=$pids"
+#for pid in $pids; do
+# # find DBUS session bus for this session
+# CRED=$(egrep -z 'USER|DBUS_SESSION_BUS_ADDRESS' /proc/$pid/environ | tr \\0 ' ') 
+# if [ "$CRED" != "" ]; then
+#   eval export $CRED
+#   su $USER -c "notify-send 'usb dev: ' '$1'"
+# fi
+#done
+

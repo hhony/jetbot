@@ -1,0 +1,9 @@
+#!/bin/sh
+#su $USER sensor-notify-send "$1"
+#su $LOGNAME -c "DISPLAY=":0.0" sensor-notify-send "$1""
+#export XAUTHORITY="/home/$USER/.Xauthority"
+#export DISPLAY=":0.0"
+#su $USER sensor-notify-send $1 & exit
+eval "export $(egrep -z DBUS_SESSION_BUS_ADDRESS /proc/$(pgrep -u $LOGNAME gnome-panel)/environ)";
+notify-send "come on" "test this"
+
