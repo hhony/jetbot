@@ -1,3 +1,6 @@
 [submodule "bsp/ros/image_pipeline"]
 	path = bsp/ros/image_pipeline
 	url = https://github.com/hhony/image_pipeline.git
+[submodule "navigation/viso2"]
+	path = navigation/viso2
+	url = https://github.com/hhony/viso2.git
