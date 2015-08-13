@@ -1,0 +1,3 @@
+[submodule "bsp/ros/image_pipeline"]
+	path = bsp/ros/image_pipeline
+	url = https://github.com/hhony/image_pipeline.git
