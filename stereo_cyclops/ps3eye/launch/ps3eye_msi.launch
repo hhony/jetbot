@@ -1,0 +1,9 @@
+<launch>
+    <arg name="SKIP" default="0"/>
+
+    <include file="$(find ps3eye)/launch/ps3eye_stereo.launch">
+      <arg name="LEFT_DEV" value="/dev/camera_left"/>
+      <arg name="RIGHT_DEV" value="/dev/camera_right"/>
+      <arg name="SKIP" value="$(arg SKIP)"/>
+    </include>
+</launch>

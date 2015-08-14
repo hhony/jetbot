@@ -1,0 +1,31 @@
+<launch>
+  <!-- This launchfile should bring up a node that broadcasts a ros image
+       transport on /webcam/image_raw -->
+
+  <arg name="LEFT_DEV" default="/dev/camera_left"/>
+  <arg name="RIGHT_DEV" default="/dev/camera_right"/>
+  <arg name="WIDTH" default="640"/>
+  <arg name="HEIGHT" default="480"/>
+  <arg name="FPS" default="10"/>
+  <arg name="BRIGHTNESS" default="0"/>
+  <arg name="PUBLISH_FRAME" default="false"/>
+  <arg name="SKIP" default="0"/>
+
+  <group ns="ps3eye">
+    <node name="uvc_stereo_node" pkg="uvc_camera" type="uvc_stereo_node" output="screen">
+      <param name="left/device" value="$(arg LEFT_DEV)"/>
+      <param name="right/device" value="$(arg RIGHT_DEV)"/>
+      <param name="left/camera_info_url" value="package://ps3eye/calibration/ps3eye_left_cal.ini"/>
+      <param name="right/camera_info_url" value="package://ps3eye/calibration/ps3eye_right_cal.ini"/>
+      <param name="frame_id" value="/ps3eye/left"/>
+      <param name="fps" value="$(arg FPS)"/>
+      <param name="width" value="$(arg WIDTH)"/>
+      <param name="height" value="$(arg HEIGHT)"/>
+      <param name="skip_frames" value="$(arg SKIP)"/>
+    </node>
+  </group>
+
+  <node if="$(arg PUBLISH_FRAME)" name="left_transform" pkg="tf" type="static_transform_publisher" args="1 2 3 0 -3.141 0 /world /ps3eye/left 10"/>
+  <node if="$(arg PUBLISH_FRAME)" name="right_transform" pkg="tf" type="static_transform_publisher" args="1 2 3 0 -3.141 0 /world /ps3eye/right 10"/>
+
+</launch>

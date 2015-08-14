@@ -1,0 +1,16 @@
+<launch>
+    <!-- This launchfile starts a disparity strean for the camera -->
+    <arg name="LEFT_DEV" default="/dev/camera_left"/>
+    <arg name="RIGHT_DEV" default="/dev/camera_right"/>
+    <arg name="SKIP" default="0"/>
+
+    <include file="$(find ps3eye)/launch/ps3eye_start.launch">
+      <arg name="LEFT_DEV" value="$(arg LEFT_DEV)"/>
+      <arg name="RIGHT_DEV" value="$(arg RIGHT_DEV)"/>
+      <arg name="SKIP" value="$(arg SKIP)"/>
+    </include>
+    <node name="stereo_image_proc" pkg="stereo_image_proc" type="stereo_image_proc" args="_approximate_sync:=True">
+      <env name="ROS_NAMESPACE" value="ps3eye"/>
+      <rosparam command="load" file="$(find ps3eye)/calibration/ps3eye_stereo.yaml" />
+    </node>
+</launch>
