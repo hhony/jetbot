@@ -1,0 +1,9 @@
+<launch>
+
+    <arg name="port" default="/dev/razor_imu" />
+
+    <node pkg="razor_imu_9dof" type="node.py" name="node" output="screen" respawn="true">
+        <param name="device" type="string" value="$(arg port)" />
+    </node>
+
+</launch>

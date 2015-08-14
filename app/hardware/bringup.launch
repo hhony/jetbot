@@ -1,0 +1,12 @@
+<launch>
+
+	<arg name="imu" default="true"/>
+	<arg name="stereo" default="true"/>
+
+	<!-- Enable the IMU -->
+	<include if="$(arg imu)" file="$(find app)/hardware/razor_imu.launch"/>
+
+	<!-- Enable the stereo cameras -->
+	<include if="$(arg stereo)" file="$(find app)/hardware/stereo.launch"/>
+
+</launch>

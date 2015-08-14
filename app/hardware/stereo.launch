@@ -1,0 +1,9 @@
+<launch>
+
+      <include file="$(find ps3eye)/launch/ps3eye_start.launch">
+          <arg name="LEFT_DEV" value="/dev/camera_left"/>
+          <arg name="RIGHT_DEV" value="/dev/camera_right"/>
+          <arg name="SKIP" value="0"/>
+      </include>
+
+</launch>
