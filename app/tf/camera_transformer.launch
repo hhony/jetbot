@@ -1,0 +1,12 @@
+<launch>
+
+      <arg name="from"/>
+      <arg name="to"/>
+
+      <group ns="camera_transformer">
+          <node pkg="tf" type="static_transform_publisher" name="$(anon camera_transformer)"
+               args="0.0 0.0 0.0 -1.5707963267948966 0.0 -1.5707963267948966 $(arg from) $(arg to) 10" />
+      </group>
+
+</launch>
+

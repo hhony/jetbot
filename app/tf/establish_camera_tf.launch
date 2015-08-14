@@ -1,0 +1,13 @@
+<launch>
+
+	<group ns="tf_tree">
+         
+         <!-- Camera transformers - cameras have the property that z is out, so this makes the transform valid -->
+         <include file="$(find app)/tf/camera_transformer.launch">
+             <arg name="from" value="camera_link"/>
+             <arg name="to" value="ps3eye/left"/>
+         </include>
+
+	</group>
+
+</launch>

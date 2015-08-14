@@ -1,0 +1,18 @@
+<launch>
+
+      <group ns="tf_tree">
+
+          <!-- Set the base link to be coincident with the base footprint -->
+          <node pkg="tf" type="static_transform_publisher" name="base_link_tf"
+               args="0.0 0.0 0.0 0.0 0.0 0.0 1.0 base_footprint base_link 50" />
+
+          <node pkg="tf" type="static_transform_publisher" name="imu_tf"
+               args="-0.243 0.000 0.381 0.000 0.000 0.000 1.000 base_link base_imu_link 50" />
+
+          <node pkg="tf" type="static_transform_publisher" name="ps3eye_tf"
+               args="-0.127 0.004 0.660 0.000, 0.174, 0.000, 0.985 base_link camera_link 50" />
+
+     </group>
+
+</launch>
+
