@@ -59,3 +59,6 @@ For stereo vision, the bottleneck is generally not the camera speed - but the li
 ### Hardware Modification ###
 __WIKI COMING SOON__
 
+Until then:
+* I will be sharing the 3D print model and editable file soon also...
+* [Stereo Camera Prototype 1.1](http://hansbot.blogspot.com/2015/06/improved-stereo-camera.html)
