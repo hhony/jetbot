@@ -1,0 +1,6 @@
+# ps3eye cameras
+KERNEL=="video?", SUBSYSTEMS=="usb", ATTRS{devpath}=="?.1", ATTRS{manufacturer}=="OmniVision Technologies, Inc.", NAME="camera_left", SYMLINK="camera_left", MODE="0666"
+KERNEL=="video?", SUBSYSTEMS=="usb", ATTRS{devpath}=="?.2", ATTRS{manufacturer}=="OmniVision Technologies, Inc.", NAME="camera_right", SYMLINK="camera_right", MODE="0666"
+# razor imu
+KERNEL=="ttyUSB?", SUBSYSTEMS=="usb", ATTRS{devpath}=="?.3", NAME="razor_imu", SYMLINK+="razor_imu", MODE="0666"
+
