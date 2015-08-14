@@ -1,7 +1,7 @@
 # jetbot #
 Jetson tk1 compatible stereo camera - nickname: stereo_cyclops
 
-### how to clone jetbot: ###
+### How to clone jetbot: ###
 This project has submodules, so you will have to clone it using the following command:
 
      git clone --recurse-submodules https://github.com/hhony/jetbot.git
@@ -19,11 +19,13 @@ This was built using ROS Indigo. Install ROS Indigo, and start with:
 
      roslaunch app robot.launch
 
-To build this on the Jetson, with an ARM processor, you will have to build ROS from source. This requires python tools and a separate workspace that acts like `/opt/ros/indigo/share`. DO NOT USE `apt-get install ros-indigo-*` if you are going this route - it will not work. You will then have to remove one additional file after the above is working:
+__Note: This will build on either armv7 or x64.__ There are compiler flags included in the submodules and cmake to include the appropriate compiler flags as well as source headers necessary for either. We primarily developed on x64 and tested on ARM, and so keeping the trees in sync was a bit time consuming.
+
+__To build this on the Jetson,__ with an ARM processor, you will have to build ROS from source. This requires python tools and a separate workspace that acts like `/opt/ros/indigo/share`. DO NOT USE `apt-get install ros-indigo-*` if you are going this route - it will not work. You will then have to remove one additional file after the above is working:
 
      rm jetbot/bsp/ros/CATKIN_IGNORE
 
-Removing this file will allow you to build on the ARM process and link the forked version of `stereo_image_proc` into the `catkin_make` command. Again you will not be using the standard apt-get package route, so do not install them in parallel.
+Removing this file will allow you to build on the ARM processor and link the forked version of `stereo_image_proc` into the `catkin_make` command. Again you will not be using the standard apt-get package route, so do not install them in parallel.
 
 ### Description of jetbot ###
 This repo is a subtree started from of a larger project (called 'beast') which I worked on in early 2015. A few roboticists in the bay area got together to build a robot for a NASA challenge. I built a stereo camera from off-the-shelf parts, 3D printed models of the prototype, hardware synced the device, calibrated and added ROS node to the tree. In large part, my efforts were accomplished with the assistance of another teammate: Bruno Hexsel. 
@@ -37,7 +39,7 @@ For stereo vision, the bottleneck is generally not the camera speed - but the li
 * [Constant-Space Belief Propagation (*CSBP*)](http://www.cs.cityu.edu.hk/~qiyang/publications/cvpr-10-qingxiong-yang-csbp.pdf)
 * [Random Sample Consensus (*RANSAC*)](http://www.cs.columbia.edu/~belhumeur/courses/compPhoto/ransac.pdf)
 
-### Pros of PS3eye as sensor platform: ###
+#### Pros of PS3eye as sensor platform: ####
 * It is dirt cheap!
   * You cannot buy a decent stereo camera off-the-shelf for under $300.
   * There are a lot of these left over in bulk stock from a few years ago.
@@ -47,7 +49,7 @@ For stereo vision, the bottleneck is generally not the camera speed - but the li
 * It has a standard M-mount lense part that can be 3D printed (from grabcad) or purchased online.
 * It runs out of the box, without cuda (but update rate will be slower).
 
-### Cons of PS3eye as sensor platform: ###
+#### Cons of PS3eye as sensor platform: ####
 * It requires a hardware modification to keep the camera frames in sync. 
   * It might be possible to do this in software, but for the amount of time you would spend vs. the benefits... the hardware modification is much cheaper and easier.
   * If you're looking for cheap and easy, you might just want to go buy a Bumblebee now!
