@@ -1,0 +1,27 @@
+<launch>
+	<arg name="odom_used" default="false"/>
+	<arg name="imu_used" default="true"/>
+	<arg name="vo_used" default="true"/>
+	<arg name="vo_topic" default="/stereo_odometer/odometry"/>
+	<arg name="imu_topic" default="/imu"/>
+	<arg name="odom_topic" default="/odom"/>
+
+	<node pkg="robot_pose_ekf" type="robot_pose_ekf" name="robot_pose_ekf" output="screen">
+		<remap from="vo" to="$(arg vo_topic)"/>
+		<remap from="imu_data" to="$(arg imu_topic)"/>
+		<remap from="odom" to="$(arg odom_topic)"/>
+		<param name="output_frame" value="odom"/>
+		<param name="freq" value="100.0"/>
+		<param name="sensor_timeout" value="1000.0"/>
+		<param name="odom_used" value="$(arg odom_used)"/>
+		<param name="imu_used" value="$(arg imu_used)"/>
+		<param name="vo_used" value="$(arg vo_used)"/>
+		<param name="debug" value="true"/>
+		<param name="self_diagnose" value="false"/>
+	</node>
+
+	<node pkg="posecov2pose" type="posecov2pose_node" name="odom_converter" output="screen">
+		<param name="input" value="/robot_pose_ekf/odom_combined"/>
+		<param name="output" value="odom_simple"/>
+    </node>
+</launch>
