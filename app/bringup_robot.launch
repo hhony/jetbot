@@ -1,0 +1,4 @@
+<launch>
+  <!-- brings up the system -->
+  <include file="$(find app)/launch/tk1_slave.launch" />
+</launch>

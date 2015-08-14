@@ -1,0 +1,24 @@
+<launch>
+
+      <arg name="hw" default="true"/>
+      <arg name="show_disparity" default="false"/>
+
+      <!-- Hardware connected to robot -->
+      <include if="$(arg hw)" file="$(find app)/hardware/bringup.launch">
+          <arg name="imu" value="true"/>
+          <arg name="stereo" value="true"/>
+      </include>
+
+      <!-- Stereo Odometry -->
+      <include file="$(find odometry_cyclops)/launch/stereo_odometry.launch">
+          <arg name="show_disparity" value="$(arg show_disparity)"/>
+      </include>
+
+      <node name="cloud_filter" pkg="cloud_filter" type="cloud_filter_node"/>
+
+      <!-- Bringup tf nodes --> 
+      <include file="$(find app)/tf/establish_tf_tree.launch"/>
+      <include file="$(find app)/tf/establish_camera_tf.launch"/>
+
+</launch>
+
