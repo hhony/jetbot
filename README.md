@@ -14,7 +14,7 @@ For more help on using submodules, see:
 
      git submodule --help
 
-### Requirements ###
+### Software Requirements ###
 This was built using ROS Indigo. Install ROS Indigo, and start with:
 
      roslaunch app robot.launch
@@ -26,6 +26,10 @@ __To build this on the Jetson,__ with an ARM processor, you will have to build R
      rm jetbot/bsp/ros/CATKIN_IGNORE
 
 Removing this file will allow you to build on the ARM processor and link the forked version of `stereo_image_proc` into the `catkin_make` command. Again you will not be using the standard apt-get package route, so do not install them in parallel.
+
+### Hardware Requirements ###
+1. two PS3eye cameras with hardware modification
+2. one Razor 9DOF IMU
 
 ### Description of jetbot ###
 This repo is a subtree started from of a larger project (called 'beast') which I worked on in early 2015. A few roboticists in the bay area got together to build a robot for a NASA challenge. I built a stereo camera from off-the-shelf parts, 3D printed models of the prototype, hardware synced the device, calibrated and added ROS node to the tree. In large part, my efforts were accomplished with the assistance of another teammate: Bruno Hexsel. 
