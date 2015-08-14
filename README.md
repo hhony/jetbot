@@ -28,11 +28,11 @@ Removing this file will allow you to build on the ARM process and link the forke
 ### Description of jetbot ###
 This repo is a subtree started from of a larger project (called 'beast') which I worked on in early 2015. A few roboticists in the bay area got together to build a robot for a NASA challenge. I built a stereo camera from off-the-shelf parts, 3D printed models of the prototype, hardware synced the device, calibrated and added ROS node to the tree. In large part, my efforts were accomplished with the assistance of another teammate: Bruno Hexsel. 
 
-The point of the project was to be able to build and off-the-shelf sensor for under $20. Bruno and I chose the cameras, baseline, field of view, and initial framerate. Then, I fine tuned the performance to use cuda on the jetson tk1 nvidia GPU (and neon vectors). This increased the update rate from 4Hz to about 15Hz. The effective range of the camera is about 1-5m with a 9cm baseline and the stock optics in PS3eye.
+The point of the project was to be able to build an off-the-shelf sensor for under $20. Bruno and I chose the cameras, baseline, field of view, and initial framerate. Then, I fine tuned the performance to use cuda on the jetson tk1 nvidia GPU (and neon vectors). This increased the disparity update rate from 4Hz to about 15Hz. The effective range of the camera is about 1-5m with a 9cm baseline and the stock optics in PS3eye.
 
-The camera is a very inexpensive PS3eye, which you can purchase on amazon for a few dollars from bulk stock. The driver for the module is uvcvideo. The driver can be modified for variable framerates from a config file, if you so desire, but you will have to build a custom linux kernel and include the uvcvideo driver as module. Since most pc's have cameras - it generally comes as part of the kernel.
+The camera is a very inexpensive PS3eye, which you can purchase on Amazon for a few dollars from bulk stock. The driver for the module is the standard uvcvideo. The driver can be modified for variable framerates from a config file, if you so desire, but you will have to build a custom linux kernel and include the uvcvideo driver as a kernel module. Since most pc's have cameras - it generally comes as part of the kernel.
 
-For stereo vision, your bottleneck is generally not the camera speed - but is actually the algorithms. The types of algorithms I am referring are algorithms like: 
+For stereo vision, the bottleneck is generally not the camera speed - but the limiting factors are actually the algorithms to process the video stream. The types of algorithms I am referring are algorithms like: 
 * [Block Based Matching (*BM*)](http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.11.6390&rep=rep1&type=pdf)
 * [Constant-Space Belief Propagation (*CSBP*)](http://www.cs.cityu.edu.hk/~qiyang/publications/cvpr-10-qingxiong-yang-csbp.pdf)
 * [Random Sample Consensus (*RANSAC*)](http://www.cs.columbia.edu/~belhumeur/courses/compPhoto/ransac.pdf)
