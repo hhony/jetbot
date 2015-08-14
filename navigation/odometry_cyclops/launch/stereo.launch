@@ -1,0 +1,15 @@
+<launch>
+
+	<arg name="show_disparity" default="false"/>
+	<arg name="camera" />
+	<arg name="calibration_file" default="$(find cyclops)/calibration/stereo_param.yaml" />
+
+	<group ns="$(arg camera)">
+		<node pkg="stereo_image_proc" type="stereo_image_proc" name="stereo_image_proc" />
+	 	<node name="dyparam" pkg="dynamic_reconfigure" type="dynparam" args="load stereo_image_proc $(find odometry_cyclops)/calibration/$(arg calibration_file)" />
+
+	</group>
+
+	<node if="$(arg show_disparity)" pkg="image_view" type="stereo_view" name="stereo_view" args="stereo:=$(arg camera) image:=image_raw" output="screen"/>
+
+</launch>

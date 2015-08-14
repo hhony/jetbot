@@ -1,0 +1,42 @@
+<launch>
+
+      <arg name="camera" default="ps3eye"/>
+      <arg name="show_disparity" default="false"/>
+      <arg name="calibration_file" default="$(find cyclops)/calibration/stereo_param.yaml"/>
+
+      <arg name="odom_used" default="true"/>
+      <arg name="imu_used" default="true"/>
+      <arg name="vo_used" default="true"/>
+
+
+      <!-- Stereo file - may need to be moved to a different package -->
+      <include file="$(find odometry_cyclops)/launch/stereo.launch">
+          <arg name="camera" value="$(arg camera)"/>
+          <arg name="show_disparity" value="$(arg show_disparity)"/>
+          <arg name="calibration_file" value="$(arg calibration_file)"/>
+      </include>
+
+      <!-- Stereo visual odometry -->
+      <include file="$(find odometry_cyclops)/launch/viso2.launch">
+          <arg name="camera" value="$(arg camera)" />
+      </include>
+
+      <!-- EKF sensor fusion -->
+      <!--include file="$(find odometry_cyclops)/launch/ekf.launch">
+          <arg name="odom_used" default="$(arg odom_used)"/>
+          <arg name="imu_used" default="$(arg imu_used)"/>
+          <arg name="vo_used" default="$(arg vo_used)"/>
+      </include-->
+
+
+      <!-- UKF sensor noise -->
+      <include file="$(find odometry_cyclops)/launch/ukf.launch"/>
+
+
+      <!-- Output a combined odometry -->
+      <node name="ekf_pose2odom" pkg="pose2odom" type="pose2odom" output="screen" respawn="true">
+          <param name="input" value="/robot_pose_ekf/odom_combined"/>
+          <param name="output" value="/odom_combined"/>
+      </node>
+
+</launch>
