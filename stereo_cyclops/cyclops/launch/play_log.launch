@@ -1,0 +1,4 @@
+<launch>
+  <arg name="log"/>
+  <node pkg="rosbag" type="play" name="rosbag" args="--clock --loop $(arg log)"/>
+</launch>

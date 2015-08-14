@@ -1,0 +1,5 @@
+<launch>
+  <node name="stereo_odom" pkg="viso2_ros" type="stereo_odometer" args="stereo:=/ps3eye image:=/image_rect_color _sensor_frame_id:=/ps3eye/left _odom_frame_id:=vo">
+  </node>
+
+</launch>

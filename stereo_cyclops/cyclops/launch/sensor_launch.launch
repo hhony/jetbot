@@ -1,0 +1,10 @@
+<launch>
+    <include file="$(find ps3eye)/launch/ps3eye_start.launch">
+      <arg name="LEFT_DEV" value="/dev/camera_left"/>
+      <arg name="RIGHT_DEV" value="/dev/camera_right"/>
+      <arg name="SKIP" value="0"/>
+    </include>
+    <node pkg="razor_imu_9dof" type="node.py" name="node" output="screen">
+        <param name="device" type="string" value="/dev/razor_imu" />
+    </node>
+</launch>

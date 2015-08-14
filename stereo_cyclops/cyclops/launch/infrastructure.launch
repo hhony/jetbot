@@ -1,0 +1,11 @@
+<launch>
+  <arg name="STEREO" default="false"/>
+  <node name="left_transform" pkg="tf" type="static_transform_publisher" args="0 0 0.75 1.57 -3.14 1.28 /base_link /ps3eye/left 10"/>
+  <node name="imu_transform" pkg="tf" type="static_transform_publisher" args="0 -0.05 0.75 -1.57 0 0 /base_link /base_imu_link 10"/>
+  <node if="$(arg STEREO)" name="stereo_image_proc" pkg="stereo_image_proc" type="stereo_image_proc" args="_approximate_sync:=True">
+      <env name="ROS_NAMESPACE" value="ps3eye"/>
+  </node>
+  <node if="$(arg STEREO)" name="dynamic_reconfigure" pkg="dynamic_reconfigure" type="dynparam" args="load /ps3eye/stereo_image_proc $(find cyclops)/calibration/stereo_param.yaml">
+  </node>
+
+</launch>
