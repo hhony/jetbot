@@ -1,5 +1,5 @@
 # jetbot #
-Jetson tk1 compatible stereo camera - nickname: stereo_cyclops, [here's the device](hansbot.blogspot.com/2015/06/improved-stereo-camera.html)
+Jetson tk1 compatible stereo camera - nickname: stereo_cyclops, [here's the device](http://hansbot.blogspot.com/2015/06/improved-stereo-camera.html)
 
 ### How to clone jetbot: ###
 This project has submodules, so you will have to clone it using the following command:
