@@ -40,7 +40,7 @@ Removing this file will allow you to build on the ARM processor and link the for
 2. one Razor 9DOF IMU
 
 ### Description of jetbot ###
-This repo is a subtree started from of a larger project (called 'beast') which I worked on in early 2015. A few roboticists in the bay area got together to build a robot for a NASA challenge. I built a stereo camera from off-the-shelf parts, 3D printed models of the prototype, hardware synced the device, calibrated and added ROS node to the tree. In large part, my efforts were accomplished with the assistance of another teammate: Bruno Hexsel. 
+This repo is a subtree started from of a larger project (called '[beast](http://www.youtube.com/watch?v=o55oAOLSg6g)') which I worked on in early 2015. A few roboticists in the bay area got together to build a robot for a NASA challenge. I built a stereo camera from off-the-shelf parts, 3D printed models of the prototype, hardware synced the device, calibrated and added ROS node to the tree. In large part, my efforts were accomplished with the assistance of another teammate: Bruno Hexsel. 
 
 The point of the project was to be able to build an off-the-shelf sensor for under $20. Bruno and I chose the cameras, baseline, field of view, and initial framerate. Then, I fine tuned the performance to use cuda on the jetson tk1 nvidia GPU (and neon vectors). This increased the disparity update rate from 4Hz to about 15Hz. The effective range of the camera is about 1-5m with a 9cm baseline and the stock optics in PS3eye.
 
