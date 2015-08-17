@@ -14,6 +14,7 @@ Jetson tk1 compatible stereo camera - nickname: stereo_cyclops
   1. [Pros of camera](https://github.com/hhony/jetbot/wiki#pros-of-ps3eye-as-sensor-platform)
   2. [Cons of camera](https://github.com/hhony/jetbot/wiki#cons-of-ps3eye-as-sensor-platform)
 5. [Hardware Modification: (DIY, how to...)](https://github.com/hhony/jetbot/wiki/wiki:-hardware-modification)
+6. 3D Printable Mount (link coming soon...)
 
 ### How to clone jetbot: ###
 This project has submodules, so you will have to clone it using the following command:
@@ -36,5 +37,4 @@ This was built using ROS Indigo. Install ROS Indigo, and start with:
 __Note: This will build on either armv7 or x64.__ See [Software Requirements](https://github.com/hhony/jetbot/wiki#software-requirements) for more info on building on either platform.
 
 More details:
-* I will be sharing the 3D print model and editable file soon also...
 * [Stereo Cyclops 1.1](http://hansbot.blogspot.com/2015/06/improved-stereo-camera.html)
