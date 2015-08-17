@@ -29,6 +29,6 @@ This was built using ROS Indigo. Install ROS Indigo, and start with:
 
 __Note: This will build on either armv7 or x64.__ See [Software Requirements](https://github.com/hhony/jetbot/wiki/jetbot-wiki-home#software-requirements) for more info on building on either platform.
 
-Until I update Hardware Modification wiki:
+More details:
 * I will be sharing the 3D print model and editable file soon also...
-* [Stereo Camera Prototype 1.1](http://hansbot.blogspot.com/2015/06/improved-stereo-camera.html)
+* [Stereo Cyclops 1.1](http://hansbot.blogspot.com/2015/06/improved-stereo-camera.html)
