@@ -2,6 +2,8 @@
 Jetson tk1 compatible stereo camera - nickname: stereo_cyclops
 
 --
+<a href="http://3.bp.blogspot.com/-1_6cSzO5hVg/VdFlmxuEO1I/AAAAAAAACMw/uh-UoaoEGV8/s1600/xmen39_cyclops.jpg" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="320" src="http://3.bp.blogspot.com/-1_6cSzO5hVg/VdFlmxuEO1I/AAAAAAAACMw/uh-UoaoEGV8/s320/xmen39_cyclops.jpg" width="320" /></a>
+
 <a href="http://4.bp.blogspot.com/-hVMFBN4IJsM/VXCcQGFK2PI/AAAAAAAABkI/wu_VtNCqzsA/s1600/new_stereo_camera_mounted.jpg" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="240" src="http://4.bp.blogspot.com/-hVMFBN4IJsM/VXCcQGFK2PI/AAAAAAAABkI/wu_VtNCqzsA/s320/new_stereo_camera_mounted.jpg" width="320" /></a>
 --
 
