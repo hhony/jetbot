@@ -17,7 +17,7 @@ Jetson tk1 compatible stereo camera - nickname: stereo_cyclops
   1. [Pros of camera](https://github.com/hhony/jetbot/wiki#pros-of-ps3eye-as-sensor-platform)
   2. [Cons of camera](https://github.com/hhony/jetbot/wiki#cons-of-ps3eye-as-sensor-platform)
 5. [Hardware Modification: (DIY, how to...)](https://github.com/hhony/jetbot/wiki/wiki:-hardware-modification)
-6. [3D Printable Mount via Onshape](https://cad.onshape.com/signin)
+6. [3D Printable Mount via Onshape](https://cad.onshape.com/signin) - it's a public file, you can modify it!
 
 ### How to clone jetbot: ###
 This project has submodules, so you will have to clone it using the following command:
