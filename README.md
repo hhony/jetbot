@@ -5,6 +5,9 @@ Jetson tk1 compatible stereo camera - nickname: stereo_cyclops
 <a href="http://3.bp.blogspot.com/-1_6cSzO5hVg/VdFlmxuEO1I/AAAAAAAACMw/uh-UoaoEGV8/s1600/xmen39_cyclops.jpg" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="320" src="http://3.bp.blogspot.com/-1_6cSzO5hVg/VdFlmxuEO1I/AAAAAAAACMw/uh-UoaoEGV8/s320/xmen39_cyclops.jpg" width="320" /></a>
 
 <a href="http://4.bp.blogspot.com/-hVMFBN4IJsM/VXCcQGFK2PI/AAAAAAAABkI/wu_VtNCqzsA/s1600/new_stereo_camera_mounted.jpg" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="240" src="http://4.bp.blogspot.com/-hVMFBN4IJsM/VXCcQGFK2PI/AAAAAAAABkI/wu_VtNCqzsA/s320/new_stereo_camera_mounted.jpg" width="320" /></a>
+
+<a href="http://2.bp.blogspot.com/-xLELNkwuyX0/Vdw-miwO0zI/AAAAAAAACNU/zx4BCLIPvfs/s1600/stereo_cam_cad_02.jpg" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="199" src="http://2.bp.blogspot.com/-xLELNkwuyX0/Vdw-miwO0zI/AAAAAAAACNU/zx4BCLIPvfs/s320/stereo_cam_cad_02.jpg" width="320" /></a>
+
 --
 
 1. [How to clone jetbot: (recommended reading)](https://github.com/hhony/jetbot#how-to-clone-jetbot)
@@ -14,7 +17,7 @@ Jetson tk1 compatible stereo camera - nickname: stereo_cyclops
   1. [Pros of camera](https://github.com/hhony/jetbot/wiki#pros-of-ps3eye-as-sensor-platform)
   2. [Cons of camera](https://github.com/hhony/jetbot/wiki#cons-of-ps3eye-as-sensor-platform)
 5. [Hardware Modification: (DIY, how to...)](https://github.com/hhony/jetbot/wiki/wiki:-hardware-modification)
-6. 3D Printable Mount (link coming soon...)
+6. [3D Printable Mount via Onshape](https://cad.onshape.com/signin)
 
 ### How to clone jetbot: ###
 This project has submodules, so you will have to clone it using the following command:
